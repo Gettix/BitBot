@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const client = require("discord.js");
 let coins = require("../profile.json");
 
 module.exports.run = async (bot, message, args) => {
