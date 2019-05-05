@@ -1,0 +1,18 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+module.exports.run = async (bot,message,args) => {
+    try{
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У Вас нет прав");
+    if(args[0]>100) return bot.send("Укажите значение меньше 100");
+    if(args[0]<1) return bot.send("Укажите значение больше 1");
+    message.channel.bulkDelete(args[0]).then(() =>{
+        bot.send(`Удалено ${args[0]} сообщений`).then(msg => msg.delete(5 * 1000));
+    });
+    message.channel.send(botmessage);
+}catch(err){
+    console.log(err.name)
+}
+};
+module.exports.help = {
+    name: "clear"
+};

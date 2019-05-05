@@ -1,1 +1,1 @@
-# BitBot
+# HinekuBot
