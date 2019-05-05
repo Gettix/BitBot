@@ -10,12 +10,18 @@ module.exports.run = async (bot, message, args) => {
     };
   }
   let uCoins = coins[message.author.id].coins;
-  const emojim = client.emojis.find(emoji => emoji.name === "Money");
-
+  var bean = message.guild.emojis.find(emoji => emoji.name == 'Money');
+	// By guild id 
+	if(message.guild.id == '574457191218806785') {
+	if(bean) {
+    		if(message.content.startsWith("<:bean:" + bean.id + ">")) {
+    			message.react(bean.id);
+    		}
+    	}
   let coinEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#00FF00")
-  .addField(`<${emojim}>`, uCoins);
+  .addField(`<- ${bean} ->`, uCoins);
 
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 
