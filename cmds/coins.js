@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   if(!coins[message.author.id]){
     coins[message.author.id] = {
       coins: 0
-    };
+    });
   }
   let uCoins = coins[message.author.id].coins;
   var bean = message.guild.emojis.find(emoji => emoji.name == 'Money');
