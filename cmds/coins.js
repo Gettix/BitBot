@@ -8,7 +8,6 @@ module.exports.run = async (bot, message, args) => {
       coins: 0
     };
   }
-  const clientem = client.emojis.get("574457191218806785");
   let uCoins = coins[message.author.id].coins;
   const emojim = client.emojis.find(emoji => emoji.name === "Money");
 
