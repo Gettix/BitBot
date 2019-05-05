@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
             clippedEmbed = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setColor("#ff0000")
-            .addField(":gun:","You were working and you got clipped and lost 10% of your coins")
+            .addField(":Money:","You were working and you got clipped and lost 10% of your coins")
             .addField("Chance","1/100")
             message.channel.send(clippedEmbed).then(msg => {msg.delete(5000)});
         } else {
@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
             workEmbed = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setColor("#00ff00")
-            .addField(":coffee:","Вы получили, +" + toAdd.toString() + "coffee" )
+            .addField(":Money:","Вы получили, +" + toAdd.toString() + "pixels :Money:" )
             .addField("Chance","99/100")
             message.channel.send(workEmbed).then(msg => {msg.delete(5000)});
         }
